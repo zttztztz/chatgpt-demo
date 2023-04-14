@@ -30,6 +30,9 @@ window.addEventListener('message', function(event) {
   if (event && event.data && event.data.localStorage == true) {
     localStorage.setItem('pass', '12345678');
   }
+  else{
+    localStorage.setItem('pass', '');
+  }
 
 
 
