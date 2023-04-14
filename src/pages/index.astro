@@ -17,7 +17,24 @@ import 'highlight.js/styles/atom-one-dark.css'
 </Layout>
 
 <script>
+
+
+
+window.addEventListener('message', function(event) {
+  // 判断消息来源是否为指定的服务器地址
+   console.log('event=======',event)
+  console.log('event.data=======',event.data)
+
+  console.log('event.origin=========',event.origin )
+
+
+
+  });
+
+
+
 async function checkCurrentAuth() {
+
   const password = localStorage.getItem('pass')
   const response = await fetch('/api/auth', {
     method: 'POST',
