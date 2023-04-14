@@ -24,7 +24,7 @@ export const post: APIRoute = async(context) => {
   if (sitePassword && !(sitePassword === pass || passList.includes(pass))) {
     return new Response(JSON.stringify({
       error: {
-        message: 'Invalid password.',
+        message: '请先充值会员.',
       },
     }), { status: 401 })
   }
