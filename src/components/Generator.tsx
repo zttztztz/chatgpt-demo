@@ -135,7 +135,7 @@ export default () => {
           if (char)
             setCurrentAssistantMessage(currentAssistantMessage() + char)
 
-          isStick() && instantToBottom()
+          instantToBottom()
         }
         done = readerDone
       }
