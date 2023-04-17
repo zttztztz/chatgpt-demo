@@ -18,7 +18,7 @@ export default () => {
   const [controller, setController] = createSignal<AbortController>(null)
   const [isStick, setStick] = createSignal(false)
 
-  createEffect(() => (smoothToBottom()))
+  createEffect(() => (isStick() && smoothToBottom()))
 
   onMount(() => {
     let lastPostion = window.scrollY
