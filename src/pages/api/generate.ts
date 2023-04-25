@@ -38,7 +38,7 @@ export const post: APIRoute = async(context) => {
   const initOptions = generatePayload(apiKey, messages)
   // #vercel-disable-blocks
   if (httpsProxy)
-    initOptions.dispatcher = new ProxyAgent(httpsProxy)
+    initOptions.dispatcher = new ProxyAgent(httpsProxy) 
   // #vercel-end
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
