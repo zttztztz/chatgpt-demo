@@ -46,7 +46,10 @@ export const post: APIRoute = async(context) => {
   console.log('url======',`${baseUrl}/v1/chat/completions`)
   console.log('initOptions======',initOptions)
   const response = await fetch(`${baseUrl}/v1/chat/completions`, initOptions).catch((err: Error) => {
+    console.error(666666666666666666666666)
     console.error(err)
+    console.error(`${baseUrl}/v1/chat/completions`)
+    console.error(initOptions)
     return new Response(JSON.stringify({
       error: {
         code: err.name,
