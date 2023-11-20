@@ -31,7 +31,9 @@ export const parseOpenAIStream = (rawResponse: Response) => {
   const stream = new ReadableStream({
     async start(controller) {
       const streamParser = (event: ParsedEvent | ReconnectInterval) => {
+        console.log("11111111")
         if (event.type === 'event') {
+          console.log("3333")
           const data = event.data
           if (data === '[DONE]') {
             controller.close()
@@ -50,6 +52,7 @@ export const parseOpenAIStream = (rawResponse: Response) => {
             const json = JSON.parse(data)
             const text = json.choices[0].delta?.content || ''
             const queue = encoder.encode(text)
+            console.log("2222",text)
             controller.enqueue(queue)
           } catch (e) {
             controller.error(e)
