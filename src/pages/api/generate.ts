@@ -12,6 +12,7 @@ const sitePassword = import.meta.env.SITE_PASSWORD || ''
 const passList = sitePassword.split(',') || []
 
 export const post: APIRoute = async(context) => {
+  console.log(66666666666666666666)
   const body = await context.request.json()
   const { sign, time, messages, pass } = body
   if (!messages) {
